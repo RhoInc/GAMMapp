@@ -8,6 +8,6 @@ There are 2 ways to use the app:
 
 ```r
 shiny::runGitHub('RhoInc/GAMMapp')
-````
+```
 
-
+More information about GAMMapp can be found in the [wiki](https://github.com/RhoInc/GAMMapp/wiki).  
