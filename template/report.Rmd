@@ -1,0 +1,84 @@
+---
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+    code_folding: hide
+    
+params:
+  title: NA
+  name: NA
+  date: NA
+  text: NA
+  data: NA
+  plotTitle: NA
+  plotX: NA
+  plotY: NA
+  x: NA
+  group: NA
+  groupvar: NA
+  m1: NA
+  ylim: NA
+---
+
+---
+title: `r paste(params$title)`
+author: `r paste(params$name)`
+date: `r paste(params$date)`
+---
+
+
+## Summary:
+`r paste(params$text)`
+
+## Analysis:
+
+### Load Packages
+```{r}
+library(ggplot2)
+```
+
+### Plot data
+```{r, fig.width=8, fig.height=5}
+rr1 <- params$data
+ylimits <- params$ylim
+
+if(params$group==TRUE){
+  p <- ggplot(data=rr1, aes_string(x=params$x, y='fit', color = params$groupvar)) +
+    geom_line(size=2) +
+    theme_bw() +
+    geom_ribbon(data=rr1, aes_string(ymin='lower', ymax='upper', fill=params$groupvar), alpha=0.3) +
+    labs(x=params$plotX,
+         y=params$plotY,
+         title=params$plotTitle)+
+    theme(axis.text.x = element_text(size=14),
+          axis.text.y = element_text(size=14),
+          axis.title = element_text(size=14, face='bold'),
+          plot.title = element_text(size=16, face='bold'))+
+    ylim(ylimits[1], ylimits[2])
+
+} else {
+  p <- ggplot(data=rr1, aes_string(x=params$x, y='fit')) + 
+    geom_line(size=2) + 
+    theme_bw() + 
+    geom_ribbon(data=rr1, aes(ymin=lower, ymax=upper), alpha=0.3) +
+    labs(x=params$plotX,
+         y=params$plotY,
+         title=params$plotTitle)+
+    theme(legend.position="none",
+          axis.text.x = element_text(size=14),
+          axis.text.y = element_text(size=14),
+          axis.title = element_text(size=14, face='bold'),
+          plot.title = element_text(size=16, face='bold'))+
+    ylim(ylimits[1], ylimits[2])
+}
+
+print(p)
+```
+
+
+### Model summary
+```{r}
+summary(params$m1)
+```
+
