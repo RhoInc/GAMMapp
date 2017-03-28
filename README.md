@@ -1,4 +1,4 @@
-GAMMapp : a Shiny app for exploring longitudinal and seasonal data featuring \code{mgcv::gamm()}.
+GAMMapp : a Shiny app for exploring longitudinal and seasonal data featuring ```mgcv::gamm()```.
 
 There are 2 ways to use the app:
 
