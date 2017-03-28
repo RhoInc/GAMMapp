@@ -2,12 +2,12 @@ GAMMapp : a Shiny app for exploring longitudinal and seasonal data featuring \co
 
 There are 2 ways to use the app:
 
-1. Visit the [hosted version]('https://becca-krouse.shinyapps.io/GAMMapp/')
+1. Visit the [hosted version](https://becca-krouse.shinyapps.io/GAMMapp/)
 
 2. Run locally in your R session:
 
-`r
+```r
 shiny::runGitHub('RhoInc/GAMMapp')
-`
+````
 
 
