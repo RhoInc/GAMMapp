@@ -623,7 +623,7 @@ server = function(input, output, session){
            <code> shinyBS</code>, <code> lme4</code>, and <code> AICcmodavg</code>. 
             </p>  <p>I would like to continue to develop this app so it can be both educational and useful to the common statistician.
             </p> 
-            <p> Please contact
+            <p> The code for this app can be found <a href="https://github.com/RhoInc/GAMMapp">here </a>. Please contact
              <a href="mailto:rebecca_krouse@rhoworld.com?Subject=Longitudinal%20Model%20App" target="_top">Becca Krouse</a> 
            with any comments or suggestions. </p>')
     })
