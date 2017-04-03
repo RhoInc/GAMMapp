@@ -440,6 +440,8 @@ server = function(input, output, session){
 
       ylimit <- input$ylim
 
+      m1()
+      
       isolate({
 
         rr2 <- rr2()
